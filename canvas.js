@@ -176,8 +176,8 @@ function score() {
 
   if (circleArray.length == 0) {
     level++;
-    spawnedCircles += 5;
-    velocity += 2;
+    // spawnedCircles += 5;
+    velocity += 3;
     init();
   }
 
