@@ -172,12 +172,12 @@ animate();
 function score() {
   let score = document.getElementById("score");
   score.innerHTML = `<div style="float: left"><h2>Level ${level}</h2></div>
-   <div style="float: right"><h2>Score: ${count}</h2></div>`;
+   <div style="float: right"><h2>Time left: Score: ${count}</h2></div>`;
 
   if (circleArray.length == 0) {
     level++;
     // spawnedCircles += 5;
-    velocity += 3;
+    velocity += 5;
     init();
   }
 
