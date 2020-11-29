@@ -169,15 +169,27 @@ function animate() {
 init();
 animate();
 
+let timeleft = 10;
+let downloadTimer = setInterval(function () {
+  if (timeleft <= 0) {
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished";
+  } else {
+    document.getElementById("countdown").innerHTML =
+      timeleft + " seconds remaining";
+  }
+  timeleft -= 1;
+}, 1000);
+
 function score() {
   let score = document.getElementById("score");
   score.innerHTML = `<div style="float: left"><h2>Level ${level}</h2></div>
-   <div style="float: right"><h2>Time left: Score: ${count}</h2></div>`;
+   <div style="float: right"><h2>Score: ${count}</h2></div>`;
 
   if (circleArray.length == 0) {
     level++;
     // spawnedCircles += 5;
-    velocity += 5;
+    velocity += 3;
     init();
   }
 
